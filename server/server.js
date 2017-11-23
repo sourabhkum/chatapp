@@ -14,6 +14,15 @@ io.on('connection',(socket)=>{
     socket.on('disconnect',()=>{
         console.log('user Disconnected');
     });
+    socket.emit('newMessage',{
+        from:'sourabhcybo@gmail.com',
+        text:'hi this is text',
+        id:129
+    });
+    
+    socket.on('createMessage',(newMessage)=>{
+        console.log('createMessage',newMessage)
+    });
 });
 
 
