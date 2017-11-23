@@ -4,11 +4,14 @@
 <title>Chat Application</title>
 </head>
 <body>
-
-<h1>Welcome to chat application</h1>
-
-
+    <h4>Welcome to chat app</h4>
+    <ol id='messages'></ol>
+<form id='message-from'>
+    <input type="text" name="newMessage" />
+    <button>Send</button>
+</form>
 </body>
 <script src="/socket.io/socket.io.js"></script>
+<script src="/js/libs/jquery-3.2.1.min.js"></script>
 <script src="/js/index.js"></script>
 </html>
