@@ -1,5 +1,5 @@
 const expect=require('expect');
-var{generateMessage}=require('./message');
+var{generateMessage,generateLocationMessage}=require('./message');
 
 describe('generateMessage',()=>{
     it('Should generate correct message object',()=>{
@@ -11,3 +11,14 @@ describe('generateMessage',()=>{
 
     });
 });
+describe('generateLocationMessage',()=>{
+    it('should generate correct location object',()=>{
+        var from='Admin';
+        var latitude=18.4887761;
+        var longitude=73.8167789;
+        var url='https://www.google.com/maps?q=18.4887761,73.8167789'
+        var message=generateLocationMessage(from,latitude,longitude);
+        expect(message.createdAt).toBeA('number');
+        expect(message).toInclude({from,url});
+    })
+})
